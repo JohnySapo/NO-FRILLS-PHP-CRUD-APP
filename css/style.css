@@ -1,0 +1,19 @@
+/* 
+    Student ID: B00139596
+    Student Name: Johny Ramos
+    Course: T054 - Computer System Management
+    Module: Web Application
+    Lecturer: Robert Smith
+ */
+
+/* Create PHP File */
+
+body {
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin: 5px 0;
+}
