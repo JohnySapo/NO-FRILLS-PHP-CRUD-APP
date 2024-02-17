@@ -5,23 +5,21 @@
     Module: Web Application
     Lecturer: Robert Smith
  -->
-
- <!-- Create PHP File -->
-
-<?php include "templates/header.php"; ?>
+ <!-- CREATE PHP File -->
 
 <?php 
     if(isset($_POST['submit'])) {
-        require "config.php";
-
+        require "common.php";
+        
         try {
-            $connection = new PDO($dsn, $username, $password, $options);
+            require_once "src/DBconnect.php";
+            
             $new_user = array(
-                "firstname" => $_POST['firstname'],
-                "lastname" => $_POST['lastname'],
-                "email" => $_POST['email'],
-                "age" => $_POST['age'],
-                "location" => $_POST['location']
+                "firstname" =>  escape($_POST['firstname']),
+                "lastname"  =>  escape($_POST['lastname']),
+                "email"     =>  escape($_POST['email']),
+                "age"       =>  escape($_POST['age']),
+                "location"  =>  escape($_POST['location'])
             );
 
             $sql = sprintf( "INSERT INTO %s (%s) values (%s)", "users", implode(", ",
@@ -34,7 +32,15 @@
             echo $sql . "<br>" . $error -> getMessage();
         }
     }
+
+    include "templates/header.php"; 
+
+    if(isset($_POST['submit']) && $statement) {
+        echo $new_user['firstname']. 'sucessfully added';
+    }
 ?>
+
+<!-- HTML WEBPAGE -->
 
 <div class="form-control p-5">
     <form method="POST" class="row">

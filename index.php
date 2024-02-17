@@ -5,7 +5,7 @@
     Module: Web Application
     Lecturer: Robert Smith
  -->
- <!-- Index PHP File -->
+ <!-- INDEX PHP File -->
 
 <?php include "templates/header.php"; ?>
 
