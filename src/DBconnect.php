@@ -13,7 +13,7 @@
     try {
         $connection = new PDO($dsn, $username, $password, $options);
         echo 'DB Connected';
-    } catch (\PDOException $pex) {
+    } catch (PDOException $pex) {
         throw new \PDOException($pex -> getMessage(), (int)$pex->getCode());
     }
 ?>

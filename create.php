@@ -32,11 +32,13 @@
             echo $sql . "<br>" . $error -> getMessage();
         }
     }
+?>
 
+<?php    
     include "templates/header.php"; 
 
     if(isset($_POST['submit']) && $statement) {
-        echo $new_user['firstname']. 'sucessfully added';
+        echo $new_user['firstname']. ' sucessfully added';
     }
 ?>
 
